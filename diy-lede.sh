@@ -8,7 +8,7 @@ rm -rf package/lean/luci-theme-argon  #删除源码自带的argon主题，因为
 #
 
 # 修改openwrt登陆地址,把下面的192.168.2.2修改成你想要的就可以了，其他的不要动
-sed -i 's/192.168.1.1/192.168.2.2/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.1.211/g' package/base-files/files/bin/config_generate
 
 
 sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings  #设置密码为空（安装固件时无需密码登陆，然后自己修改想要的密码）
@@ -32,8 +32,6 @@ git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash  
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan  #微信推送
 git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns  #smartdns DNS加速
 git clone https://github.com/garypang13/luci-app-eqos package/luci-app-eqos  #内网IP限速工具
-git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
-git clone https://github.com/jerrykuku/luci-app-vssr.git
 
 
 #passwall出国软件
@@ -44,6 +42,10 @@ svn co https://github.com/xiaorouji/openwrt-package/trunk/package/tcping package
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package/trojan-go package/trojan-go
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package/trojan-plus package/trojan-plus
 svn co https://github.com/xiaorouji/openwrt-package/trunk/package/syncthing package/syncthing
+
+
+git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxmindd  #git lua-maxminddb 依赖
+git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
 
 
 git clone https://github.com/jerrykuku/node-request.git package/node-request  #京东签到依赖
